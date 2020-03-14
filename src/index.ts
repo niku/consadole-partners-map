@@ -3,15 +3,21 @@ import { join } from "path";
 import { GeoJSON, Feature } from "geojson";
 
 import { appendGeocodings, fetchGeocode, loadGeocodings, Coordinate, Geocoding } from "./geocoding";
-import { fetchAllRelationshipPartners, loadRelationshipPartners, writeRelationshipPartners } from "./relation-partner";
+import {
+  fetchAllRelationshipPartners,
+  loadRelationshipPartners,
+  writeRelationshipPartners,
+} from "./relationship-partner";
 
 async function writeRelationshipPartnersCSV(): Promise<void> {
-  fetchAllRelationshipPartners().then(writeRelationshipPartners);
+  fetchAllRelationshipPartners()
+    .then(partners => partners.sort((a, b) => a.id - b.id))
+    .then(writeRelationshipPartners);
 }
 
 async function appendGeocodingsCSV(googleMapsApiKey: string): Promise<void> {
-  const sourceAddresses = new Set(loadRelationshipPartners().map(x => x.address));
-  const destinationAddresses = new Set(loadGeocodings().map(x => x.address));
+  const sourceAddresses = new Set((await loadRelationshipPartners()).map(x => x.address));
+  const destinationAddresses = new Set((await loadGeocodings()).map(x => x.address));
   const difference = new Set(sourceAddresses);
   difference.delete(""); // remove empty string from the Set
   for (const elem of destinationAddresses) {
@@ -46,14 +52,14 @@ async function appendGeocodingsCSV(googleMapsApiKey: string): Promise<void> {
     .then(appendGeocodings);
 }
 
-function makeGeoJSON(): GeoJSON {
-  const geocoding: { [key: string]: Coordinate } = loadGeocodings().reduce((acc, geocoding) => {
+async function makeGeoJSON(): Promise<GeoJSON> {
+  const geocoding: { [key: string]: Coordinate } = (await loadGeocodings()).reduce((acc, geocoding) => {
     return {
       ...acc,
       [geocoding.address]: { latitude: geocoding.latitude, longitude: geocoding.longitude },
     };
   }, {});
-  const features: Feature[] = loadRelationshipPartners().map(x => {
+  const features: Feature[] = (await loadRelationshipPartners()).map(x => {
     const coordinate = geocoding[x.address];
     let geometryOrNull;
     if (coordinate === undefined) {
