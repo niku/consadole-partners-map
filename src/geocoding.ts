@@ -1,4 +1,4 @@
-import { load, write } from "./data";
+import { load, append } from "./data";
 import { join } from "path";
 import { Client } from "@googlemaps/google-maps-services-js";
 
@@ -16,7 +16,7 @@ export interface Geocoding extends Coordinate {
 }
 
 export async function appendGeocodings(geocodings: Geocoding[]): Promise<void> {
-  write<Geocoding>(geocodingCSVFilePath, geocodingColumnNames, geocodings);
+  append<Geocoding>(geocodingCSVFilePath, geocodingColumnNames, geocodings);
 }
 
 export async function loadGeocodings(): Promise<Geocoding[]> {

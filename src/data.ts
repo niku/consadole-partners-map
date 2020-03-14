@@ -19,35 +19,45 @@ export async function append<T>(path: string, columns: string[], data: T[]): Pro
   await fsPromises.mkdir(dirname(path), { recursive: true });
   return new Promise((resolve, reject) => {
     // Write the file with header if the file didn't exist
-    fsPromises.writeFile(path, columns, { flag: "wx" }).finally(() => {
-      stringify(data, { columns: columns }, (err, output) => {
-        if (err) {
+    fsPromises
+      .writeFile(path, columns.join() + "\n", { flag: "wx" })
+      .catch(err => {
+        if (err.code !== "EEXIST") {
           return reject(err);
         }
-        return resolve(fsPromises.appendFile(path, output));
+      })
+      .then(() => {
+        stringify(data, { columns: columns }, (err, output) => {
+          if (err) {
+            return reject(err);
+          }
+          return resolve(fsPromises.appendFile(path, output));
+        });
       });
-    });
   });
 }
 
 export async function load<T>(path: string, columns: string[]): Promise<T[]> {
   return new Promise((resolve, reject) => {
-    fsPromises.readFile(path, { encoding: "utf8" }).then(text => {
-      parse(
-        text,
-        {
-          // eslint-disable-next-line @typescript-eslint/camelcase
-          from_line: 2,
-          columns: columns,
-          cast: true,
-        },
-        (err, output) => {
-          if (err) {
-            return reject(err);
+    fsPromises
+      .readFile(path, { encoding: "utf8" })
+      .then(text => {
+        parse(
+          text,
+          {
+            // eslint-disable-next-line @typescript-eslint/camelcase
+            from_line: 2,
+            columns: columns,
+            cast: true,
+          },
+          (err, output) => {
+            if (err) {
+              return reject();
+            }
+            return resolve(output);
           }
-          return resolve(output);
-        }
-      );
-    });
+        );
+      })
+      .catch(() => resolve([]));
   });
 }

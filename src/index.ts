@@ -46,7 +46,7 @@ async function appendGeocodingsCSV(googleMapsApiKey: string): Promise<void> {
             }
             resolve([...geocodings, geocoding]);
           });
-        }, 1000)
+        }, 100)
       );
     }, Promise.resolve<Geocoding[]>([]))
     .then(appendGeocodings);
