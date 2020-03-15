@@ -1,0 +1,497 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3603913,
+          43.07006
+        ]
+      },
+      "properties": {
+        "name": "アルファビジネス",
+        "url": "http://www.alpha-business.co.jp/",
+        "address": "札幌市東区北6条東4丁目1-7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.1675123,
+          39.7041083
+        ]
+      },
+      "properties": {
+        "name": "コスモ通信システム",
+        "url": "http://kosmo-ts.com/",
+        "address": "岩手県盛岡市天神町13-29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3548775,
+          43.0429074
+        ]
+      },
+      "properties": {
+        "name": "札幌地区サッカー協会",
+        "url": "http://www.sfa-net.jp/",
+        "address": "札幌市中央区中島公園1番5号 札幌市中島体育センター2F"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3711049,
+          43.0734152
+        ]
+      },
+      "properties": {
+        "name": "札幌メールサービス",
+        "url": "http://www.sapporomail.jp/",
+        "address": "札幌市東区北8条東11丁目1番39号"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.469606,
+          43.037834
+        ]
+      },
+      "properties": {
+        "name": "support dental office　新札幌いった歯科",
+        "url": "http://www.shinsapporo-itta-dental.com/",
+        "address": "札幌市厚別区厚別中央2条4丁目9-15 新札幌中央メディカルビル3F"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3117498,
+          43.0691097
+        ]
+      },
+      "properties": {
+        "name": "須田製版",
+        "url": "http://www.suda.co.jp/",
+        "address": "札幌市西区二十四軒2条6丁目1-8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "name": "セガサミーカップ",
+        "url": "",
+        "address": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.4095117,
+          43.0490291
+        ]
+      },
+      "properties": {
+        "name": "TAZAWA INC.",
+        "url": "http://www.tazawanet.co.jp/",
+        "address": "札幌市白石区本通4丁目南2-6 タザワビルディング2F"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.2892279,
+          43.102771
+        ]
+      },
+      "properties": {
+        "name": "東邦交通",
+        "url": "http://www.toho-kotu.co.jp/",
+        "address": "札幌市西区発寒14条11丁目1-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.333183,
+          43.05615419999999
+        ]
+      },
+      "properties": {
+        "name": "パルコ",
+        "url": "http://sapporo.parco.jp/page2/",
+        "address": "札幌市中央区南1条西3-3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3240446,
+          42.9640791
+        ]
+      },
+      "properties": {
+        "name": "ブロス・カンパニー",
+        "url": "http://bros-company.com/",
+        "address": "札幌市南区石山1条6丁目1番地18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3371099,
+          43.065651
+        ]
+      },
+      "properties": {
+        "name": "ベルックス",
+        "url": "http://www.belx.jp/",
+        "address": "札幌市中央区北5条西12丁目2番地"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.5457415,
+          42.25101739999999
+        ]
+      },
+      "properties": {
+        "name": "みついし昆布",
+        "url": "http://yorokonbu.com/",
+        "address": "日高郡新ひだか町三石港町26番地"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.3891892,
+          43.01494
+        ]
+      },
+      "properties": {
+        "name": "ウインドヒル",
+        "url": "http://www.web-windhill.com/",
+        "address": "釧路市文苑1丁目1番13号"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7500582,
+          35.6220127
+        ]
+      },
+      "properties": {
+        "name": "日本ライフライン",
+        "url": "http://www.aed-rescue.com/",
+        "address": "東京都品川区東品川二丁目2番20号 天王洲オーシャンスクエア25F"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7063351,
+          35.65595
+        ]
+      },
+      "properties": {
+        "name": "エグジスタンス",
+        "url": "http://www.existence.co.jp/",
+        "address": "東京都渋谷区渋谷3-13-11 渋谷TKビル2階"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.2998082,
+          43.0836659
+        ]
+      },
+      "properties": {
+        "name": "しなねん商事",
+        "url": "http://www.sinanen-shoji.com/",
+        "address": "札幌市西区発寒3条1丁目6-6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3483066,
+          43.0661154
+        ]
+      },
+      "properties": {
+        "name": "北海道焼肉プライム",
+        "url": "http://www.kogane.co.jp/",
+        "address": "札幌市中央区北4条西5 アスティ45 1F"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.344953,
+          43.048405
+        ]
+      },
+      "properties": {
+        "name": "サバンナ",
+        "url": "http://www.svn.co.jp/",
+        "address": "札幌市中央区南9条西9丁目1-32 S9条ビル"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.4034945,
+          43.01987159999999
+        ]
+      },
+      "properties": {
+        "name": "北海道イトーヨーカドー",
+        "url": "http://www.itoyokado.co.jp/store/result.html#area_hokkaido",
+        "address": "札幌市豊平区福住2条1-2-5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.780358,
+          35.662668
+        ]
+      },
+      "properties": {
+        "name": "月島名物もんじゃ だるま",
+        "url": "http://www.monjadaruma.com/index.htm",
+        "address": "東京都中央区月島3-17-9 西仲通り商店街四番街"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "name": "菅原工業",
+        "url": "",
+        "address": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.4349266,
+          43.0306528
+        ]
+      },
+      "properties": {
+        "name": "アドバンスフロー",
+        "url": "https://find-bestwork.com/",
+        "address": "札幌市白石区南郷通18丁目北7-17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.382305,
+          43.0558465
+        ]
+      },
+      "properties": {
+        "name": "北杜土質",
+        "url": "https://www.hkt-d.co.jp/",
+        "address": "札幌市白石区菊水7条4丁目2番24号"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "name": "福田観光",
+        "url": "",
+        "address": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "name": "栗林石油株式会社",
+        "url": "",
+        "address": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3482361,
+          43.06732
+        ]
+      },
+      "properties": {
+        "name": "キャリアバンク",
+        "url": "http://www.career-bank.co.jp/index.html",
+        "address": "札幌市中央区北5条西5丁目7番地 sapporo55 5F"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "name": "マルケイ河原ボーリング",
+        "url": "",
+        "address": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.4384268,
+          43.0326119
+        ]
+      },
+      "properties": {
+        "name": "ゆうらく",
+        "url": "http://yuraku-main.com",
+        "address": "札幌市白石区本通19丁目南2番7号 食糧ビル2F"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "name": "ファインドリームス",
+        "url": "",
+        "address": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3466962,
+          43.0669524
+        ]
+      },
+      "properties": {
+        "name": "ダイシン設計",
+        "url": "https://www.dacc.co.jp/",
+        "address": "札幌市中央区北5条西6丁目1番地23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3132704,
+          43.1201214
+        ]
+      },
+      "properties": {
+        "name": "株式会社OGURI ドクターポット",
+        "url": "http://dr-pot.com/",
+        "address": "札幌市北区新琴似6条13丁目5番14号"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "name": "(株)ニナガワ",
+        "url": "",
+        "address": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3914608,
+          43.081247
+        ]
+      },
+      "properties": {
+        "name": "合同会社Link",
+        "url": "https://www.link-sapporo.com/",
+        "address": "札幌市東区伏古1条5丁目3-5-1F"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3667924,
+          43.0700248
+        ]
+      },
+      "properties": {
+        "name": "SATO社会保険労務士法人",
+        "url": "https://www.sato-group-sr.jp/",
+        "address": "札幌市東区北5条東8丁目1-33"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "name": "株式会社スタイル",
+        "url": "",
+        "address": ""
+      }
+    }
+  ]
+}
