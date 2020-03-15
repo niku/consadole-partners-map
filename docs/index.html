@@ -42,31 +42,60 @@
         }
         var address = `${properties.postalCode} ${properties.address}`;
         return `
-        ${name}
-        <dl>
-          <dt>職種</dt><dd>${properties.work}</dd>
-          <dt>住所</dt><dd>${address}</dd>
-          <dt>電話番号</dt><dd>${properties.phoneNumber}</dd>
-          <dt>会員特典</dt><dd>${properties.benefit}</dd>
-          <dt>一言コメント</dt><dd>${properties.comment}</dd>
-        </dl>
-        `;
+          ${name}<br>リレーションシップ・パートナー
+          <dl>
+            <dt>職種</dt><dd>${properties.work}</dd>
+            <dt>住所</dt><dd>${address}</dd>
+            <dt>電話番号</dt><dd>${properties.phoneNumber}</dd>
+            <dt>会員特典</dt><dd>${properties.benefit}</dd>
+            <dt>一言コメント</dt><dd>${properties.comment}</dd>
+          </dl>
+          `;
       }
-      function onEachFeature(feature, layer) {
-        layer.bindPopup(buildPopup(feature.properties));
-        layer.bindTooltip(feature.properties.name).openTooltip();
+
+      function buildMatsuyamaHikaruProjectPartnersPopup(properties) {
+        var name;
+        if (properties.url) {
+          name = `<a href ="${properties.url}">${properties.name}</a>`;
+        } else {
+          name = properties.name;
+        }
+        var address = properties.address;
+        return `
+          ${name}<br>松山光プロジェクトパートナー
+          <dl>
+            <dt>住所</dt><dd>${address}</dd>
+          </dl>
+          `;
       }
 
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
           L.geoJSON(JSON.parse(xhr.responseText), {
-            onEachFeature: onEachFeature,
+            onEachFeature: function(feature, layer) {
+              layer.bindPopup(buildPopup(feature.properties));
+              layer.bindTooltip(feature.properties.name).openTooltip();
+            },
           }).addTo(map);
         }
       };
       xhr.open("GET", "partners.geojson", true);
       xhr.send();
+
+      var xhr2 = new XMLHttpRequest();
+      xhr2.onreadystatechange = function() {
+        if (xhr2.readyState == XMLHttpRequest.DONE) {
+          L.geoJSON(JSON.parse(xhr2.responseText), {
+            onEachFeature: function(feature, layer) {
+              layer.bindPopup(buildMatsuyamaHikaruProjectPartnersPopup(feature.properties));
+              layer.bindTooltip(feature.properties.name).openTooltip();
+            },
+          }).addTo(map);
+        }
+      };
+      xhr2.open("GET", "matsuyama-hikaru-project-partners.geojson", true);
+      xhr2.send();
     </script>
   </body>
 </html>
