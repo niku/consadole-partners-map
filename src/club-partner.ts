@@ -1,9 +1,11 @@
 import { join } from "path";
-import { load, write } from "./data";
+import { load, write, append } from "./data";
 import { getJSON } from "./get-json";
 import { MatsuyamaHikaruProjectPartner } from "./matsuyama-hikaru-project-partner";
 
 const clubPartnersCSVFilePath = join(__dirname, "..", "assets", "club-partners.csv");
+
+const clubPartnerAddressesCSVFilePath = join(__dirname, "..", "assets", "club-partner-addresses.csv");
 
 export const clubPartnersColumnNames: string[] = [
   "id",
@@ -20,6 +22,8 @@ export const clubPartnersColumnNames: string[] = [
   "updatedBy",
 ];
 
+export const clubPartnerAddressesColumnNames: string[] = ["id", "address"];
+
 interface ClubPartner {
   readonly id: number;
   readonly year: number;
@@ -33,6 +37,11 @@ interface ClubPartner {
   readonly createdAt: string;
   readonly updatedAt: string;
   readonly updatedBy: number;
+}
+
+export interface ClubPartnerAddress {
+  readonly id: number;
+  readonly address: string;
 }
 
 export async function fetchClubAndMatsuyamaHikaruProjectPartners(): Promise<{
@@ -49,4 +58,12 @@ export async function writeClubPartners(clubPartners: ClubPartner[]): Promise<vo
 
 export async function loadClubPartners(): Promise<ClubPartner[]> {
   return load<ClubPartner>(clubPartnersCSVFilePath, clubPartnersColumnNames);
+}
+
+export function loadclubPartnerAddresses(): Promise<ClubPartnerAddress[]> {
+  return load<ClubPartnerAddress>(clubPartnerAddressesCSVFilePath, clubPartnerAddressesColumnNames);
+}
+
+export async function appendclubPartnerAddresses(clubPartnerAddress: ClubPartnerAddress[]): Promise<void> {
+  append<ClubPartnerAddress>(clubPartnerAddressesCSVFilePath, clubPartnerAddressesColumnNames, clubPartnerAddress);
 }

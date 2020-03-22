@@ -8,7 +8,13 @@ import {
   loadRelationshipPartners,
   writeRelationshipPartners,
 } from "./relationship-partner";
-import { fetchClubAndMatsuyamaHikaruProjectPartners, writeClubPartners } from "./club-partner";
+import {
+  fetchClubAndMatsuyamaHikaruProjectPartners,
+  writeClubPartners,
+  loadClubPartners,
+  loadclubPartnerAddresses,
+  appendclubPartnerAddresses,
+} from "./club-partner";
 import {
   writeMatsuyamaHikaruProjectPartners,
   loadMatsuyamaHikaruProjectPartners,
@@ -37,6 +43,22 @@ async function appendMatsuyamaHikaruProjectPartnerAddressesCSV(): Promise<void> 
     difference.delete(elem);
   }
   appendMatsuyamaHikaruProjectPartnerAddresses(
+    [...difference]
+      .sort((a, b) => a - b)
+      .map(x => {
+        return { id: x, address: "" };
+      })
+  );
+}
+
+async function appendClubPartnerAddressesCSV(): Promise<void> {
+  const source = new Set((await loadClubPartners()).map(x => x.id));
+  const destination = new Set((await loadclubPartnerAddresses()).map(x => x.id));
+  const difference = new Set(source);
+  for (const elem of destination) {
+    difference.delete(elem);
+  }
+  appendclubPartnerAddresses(
     [...difference]
       .sort((a, b) => a - b)
       .map(x => {
@@ -207,6 +229,9 @@ switch (command) {
     break;
   case "appendMatsuyamaHikaruProjectPartnerAddressesCSV":
     appendMatsuyamaHikaruProjectPartnerAddressesCSV();
+    break;
+  case "appendClubPartnerAddressesCSV":
+    appendClubPartnerAddressesCSV();
     break;
   case "appendGeocodingsCSV":
     const googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY;
