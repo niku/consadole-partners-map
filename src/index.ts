@@ -72,12 +72,16 @@ async function appendGeocodingsCSV(googleMapsApiKey: string): Promise<void> {
   const matsuyamaHikaruProjectPartnerAddresses = new Set(
     (await loadMatsuyamaHikaruProjectPartnerAddresses()).map(x => x.address)
   );
+  const clubPartnerAddresses = new Set((await loadclubPartnerAddresses()).map(x => x.address));
   const sourceAddresses = new Set<string>([]);
   for (const relationshipPartnerAddress of relationshipPartnerAddresses) {
     sourceAddresses.add(relationshipPartnerAddress);
   }
   for (const matsuyamaHikaruProjectPartnerAddress of matsuyamaHikaruProjectPartnerAddresses) {
     sourceAddresses.add(matsuyamaHikaruProjectPartnerAddress);
+  }
+  for (const clubPartnerAddress of clubPartnerAddresses) {
+    sourceAddresses.add(clubPartnerAddress);
   }
   const destinationAddresses = new Set((await loadGeocodings()).map(x => x.address));
   const difference = new Set(sourceAddresses);
