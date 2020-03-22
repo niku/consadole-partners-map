@@ -163,6 +163,49 @@ async function makeMatsuyamaHikaruProjectPartnersGeoJSON(): Promise<GeoJSON> {
   };
 }
 
+async function makeClubPartnersGeoJSON(): Promise<GeoJSON> {
+  const geocoding: { [key: string]: Coordinate } = (await loadGeocodings()).reduce((acc, geocoding) => {
+    return {
+      ...acc,
+      [geocoding.address]: { latitude: geocoding.latitude, longitude: geocoding.longitude },
+    };
+  }, {});
+  const addresses: { [key: number]: string } = (await loadclubPartnerAddresses()).reduce((acc, address) => {
+    return {
+      ...acc,
+      [address.id]: address.address,
+    };
+  }, {});
+  const features: Feature[] = (await loadClubPartners()).map(x => {
+    const address = addresses[x.id];
+    const coordinate = geocoding[address];
+    let geometryOrNull;
+    if (coordinate === undefined) {
+      geometryOrNull = null;
+    } else {
+      geometryOrNull = {
+        type: "Point",
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        coordinates: [coordinate.longitude!, coordinate.latitude!],
+      };
+    }
+    return {
+      type: "Feature",
+      geometry: geometryOrNull,
+      properties: {
+        name: x.name,
+        url: x.url,
+        address: address,
+        image: x.imagePath,
+      },
+    } as Feature;
+  });
+  return {
+    type: "FeatureCollection",
+    features: features,
+  };
+}
+
 async function makeGeoJSON(): Promise<GeoJSON> {
   const geocoding: { [key: string]: Coordinate } = (await loadGeocodings()).reduce((acc, geocoding) => {
     return {
@@ -221,6 +264,9 @@ async function writeGeoJSON(): Promise<void> {
     matsuyamaHikaruProjectPartnersGeoJSONFilePath,
     JSON.stringify(await makeMatsuyamaHikaruProjectPartnersGeoJSON(), null, 2)
   );
+
+  const clubPartnersGeoJSONFilePath = join(__dirname, "..", "docs", "club-partners.geojson");
+  writeFileSync(clubPartnersGeoJSONFilePath, JSON.stringify(await makeClubPartnersGeoJSON(), null, 2));
 }
 
 const [, , command] = process.argv;
@@ -247,6 +293,9 @@ switch (command) {
     break;
   case "makeMatsuyamaHikaruProjectPartnersGeoJSON":
     makeMatsuyamaHikaruProjectPartnersGeoJSON();
+    break;
+  case "makeClubPartnersGeoJSON":
+    makeClubPartnersGeoJSON();
     break;
   case "writeGeoJSON":
     writeGeoJSON();
