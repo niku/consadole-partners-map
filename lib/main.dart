@@ -19,8 +19,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    const title = '北海道コンサドーレ札幌 パートナーマップ';
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: title,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -40,7 +41,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyMap(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(title),
+        ),
+        body: const MyMap(),
+      ),
     );
   }
 }
@@ -87,7 +93,8 @@ class _MyMapState extends State<MyMap> {
       children: [
         TileLayer(
           urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-          userAgentPackageName: 'com.example.app',
+          userAgentPackageName:
+              'https://niku.github.io/consadole-partners-map/',
         ),
         PopupMarkerLayer(
             options: PopupMarkerLayerOptions(
@@ -99,15 +106,10 @@ class _MyMapState extends State<MyMap> {
                   return _MyPopup(
                       relationshipPartners: marker.relationshipPartners);
                 }))),
-        RichAttributionWidget(
-          attributions: [
-            TextSourceAttribution(
-              'OpenStreetMap contributors',
-              onTap: () =>
-                  launchUrl(Uri.parse('https://openstreetmap.org/copyright')),
-            ),
-          ],
-        ),
+        SimpleAttributionWidget(
+            source: const Text('OpenStreetMap contributors'),
+            onTap: () =>
+                launchUrl(Uri.parse('https://openstreetmap.org/copyright'))),
       ],
     );
   }
