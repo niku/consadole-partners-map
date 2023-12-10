@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyMap(),
+      home: const MyMap(),
     );
   }
 }
@@ -144,9 +144,9 @@ class _MyPopup extends StatelessWidget {
                   defaultColumnWidth: const IntrinsicColumnWidth(),
                   children: <TableRow>[
                     TableRow(children: <Widget>[
-                      TableCell(
+                      const TableCell(
                           child: Padding(
-                        padding: const EdgeInsets.all(2),
+                        padding: EdgeInsets.all(2),
                         child: Text('名称'),
                       )),
                       TableCell(
@@ -156,9 +156,9 @@ class _MyPopup extends StatelessWidget {
                       )),
                     ]),
                     TableRow(children: <Widget>[
-                      TableCell(
+                      const TableCell(
                           child: Padding(
-                        padding: const EdgeInsets.all(2),
+                        padding: EdgeInsets.all(2),
                         child: Text('現在のカテゴリー'),
                       )),
                       TableCell(
@@ -168,9 +168,9 @@ class _MyPopup extends StatelessWidget {
                       )),
                     ]),
                     TableRow(children: <Widget>[
-                      TableCell(
+                      const TableCell(
                           child: Padding(
-                        padding: const EdgeInsets.all(2),
+                        padding: EdgeInsets.all(2),
                         child: Text('パートナー継続年数'),
                       )),
                       TableCell(
@@ -181,9 +181,9 @@ class _MyPopup extends StatelessWidget {
                       )),
                     ]),
                     TableRow(children: <Widget>[
-                      TableCell(
+                      const TableCell(
                           child: Padding(
-                        padding: const EdgeInsets.all(2),
+                        padding: EdgeInsets.all(2),
                         child: Text('職種'),
                       )),
                       TableCell(
@@ -194,9 +194,9 @@ class _MyPopup extends StatelessWidget {
                               ))),
                     ]),
                     TableRow(children: <Widget>[
-                      TableCell(
+                      const TableCell(
                           child: Padding(
-                        padding: const EdgeInsets.all(2),
+                        padding: EdgeInsets.all(2),
                         child: Text('住所'),
                       )),
                       TableCell(
@@ -206,9 +206,9 @@ class _MyPopup extends StatelessWidget {
                       )),
                     ]),
                     TableRow(children: <Widget>[
-                      TableCell(
+                      const TableCell(
                           child: Padding(
-                        padding: const EdgeInsets.all(2),
+                        padding: EdgeInsets.all(2),
                         child: Text('現在のカテゴリー'),
                       )),
                       TableCell(
@@ -218,9 +218,9 @@ class _MyPopup extends StatelessWidget {
                       )),
                     ]),
                     TableRow(children: <Widget>[
-                      TableCell(
+                      const TableCell(
                           child: Padding(
-                        padding: const EdgeInsets.all(2),
+                        padding: EdgeInsets.all(2),
                         child: Text('電話番号'),
                       )),
                       TableCell(
@@ -230,9 +230,9 @@ class _MyPopup extends StatelessWidget {
                       )),
                     ]),
                     TableRow(children: <Widget>[
-                      TableCell(
+                      const TableCell(
                           child: Padding(
-                        padding: const EdgeInsets.all(2),
+                        padding: EdgeInsets.all(2),
                         child: Text('Web'),
                       )),
                       TableCell(
@@ -254,9 +254,9 @@ class _MyPopup extends StatelessWidget {
                               ))),
                     ]),
                     TableRow(children: <Widget>[
-                      TableCell(
+                      const TableCell(
                           child: Padding(
-                        padding: const EdgeInsets.all(2),
+                        padding: EdgeInsets.all(2),
                         child: Text('会員特典'),
                       )),
                       TableCell(
@@ -266,9 +266,9 @@ class _MyPopup extends StatelessWidget {
                       )),
                     ]),
                     TableRow(children: <Widget>[
-                      TableCell(
+                      const TableCell(
                           child: Padding(
-                        padding: const EdgeInsets.all(2),
+                        padding: EdgeInsets.all(2),
                         child: Text('一言コメント'),
                       )),
                       TableCell(
