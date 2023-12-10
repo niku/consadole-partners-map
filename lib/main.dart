@@ -34,20 +34,26 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyFlutterMap(),
+      home: MyFlutterMap(),
     );
   }
 }
 
 class MyFlutterMap extends StatelessWidget {
-  const MyFlutterMap({super.key});
+  MyFlutterMap({super.key});
+
+  final defaultCenter = const LatLng(43.1, 142.5);
+  final double defaultZoom = 8;
+  final defaultMaxBounds =
+      LatLngBounds(const LatLng(20.0, 122.0), const LatLng(50.0, 154.0));
 
   @override
   Widget build(BuildContext context) {
     return FlutterMap(
-      options: const MapOptions(
-        initialCenter: LatLng(51.509364, -0.128928),
-        initialZoom: 9.2,
+      options: MapOptions(
+        initialCenter: defaultCenter,
+        initialZoom: defaultZoom,
+        cameraConstraint: CameraConstraint.contain(bounds: defaultMaxBounds),
       ),
       children: [
         TileLayer(
