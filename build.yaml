@@ -5,6 +5,12 @@ builders:
     build_extensions: {".dart": [".g.dart"]}
     auto_apply: root_package
     build_to: source
+  geocodesBuilder:
+    import: 'package:consadole_partners_map/geocodes_builder.dart'
+    builder_factories: ["geocodesBuilderFactory"]
+    build_extensions: {".dart": [".g.dart"]}
+    auto_apply: root_package
+    build_to: source
 targets:
   $default:
     builders:
@@ -12,3 +18,11 @@ targets:
         generate_for:
           include:
             - lib/relationship_partners_builder.dart
+      consadole_partners_map:geocodesBuilder:
+        generate_for:
+          include:
+            - lib/geocodes_builder.dart
+global_options:
+  consadole_partners_map:relationshipPartnersBuilder:
+    runs_before:
+      - consadole_partners_map:geocodesBuilder
